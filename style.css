@@ -48,7 +48,7 @@ a{
   z-index: -1;
   padding: 3px;
   border-radius: 10px;
-  animation: 0.9s spin linear infinite;
+  animation: 0.8s spin linear infinite;
 }
 .card::before{
   filter: blur(1.5rem);
