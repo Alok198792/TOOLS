@@ -62,3 +62,26 @@ a{
     --angle: 360deg;
   }
 }
+
+
+
+
+
+.footer{
+   background: #343434;
+   padding-top: 0px;
+}
+.panel{
+  background: #0b2bb8;
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.panel p{
+  color: #FFFFFF;
+  margin: 0;
+  font-size: 16px;
+  padding: 7px;
+}
+
