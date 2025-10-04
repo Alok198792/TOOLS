@@ -72,15 +72,17 @@ a{
   }
 }
 
- footer {
+  footer {
   width: 100%;
-  background-color: blueviolet;   /* Footer background */
-  padding: 15px 0;             /* Upar niche spacing */
+  background-color: blueviolet;   /* Footer ka background */
+  padding: 15px 0;               /* Upar niche spacing */
   display: flex;
-  justify-content: center;     /* Horizontal center */
-  align-items: center;         /* Vertical center */
-  position: relative;          /* Normal position */
-  bottom: 0;
+  justify-content: center;       /* Horizontal center */
+  align-items: center;           /* Vertical center */
+  position: fixed;               /* Fix footer */
+  bottom: 0;                     /* Always bottom */
+  left: 0;                       /* Left se start */
+  z-index: 1000;                 /* Sabse upar rahe */
 }
 
 footer .panel p {
@@ -88,10 +90,4 @@ footer .panel p {
   font-size: 18px;
   color: #cacfe6;  /* Text color */
   text-align: center;
- }
-
-
-                                            
-
-
-
+}
