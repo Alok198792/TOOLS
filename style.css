@@ -72,25 +72,26 @@ a{
   }
 }
 
-.footer{
-   background: #343434;
-   padding-top: 0px;
+ footer {
+  width: 100%;
+  background-color: blueviolet;   /* Footer background */
+  padding: 15px 0;             /* Upar niche spacing */
+  display: flex;
+  justify-content: center;     /* Horizontal center */
+  align-items: center;         /* Vertical center */
+  position: relative;          /* Normal position */
+  bottom: 0;
 }
-.panel{
-  background: #7732a6;
-  text-align: center;
-  padding: 10px 0;
-  margin-bottom: 10px;
-/*   border-radius: 10px; */
-}
-.panel p{
-  color:  #dfd9e2;
+
+footer .panel p {
   margin: 0;
-  font-size: 16px;
-  padding: 8px;
-}
+  font-size: 18px;
+  color: #cacfe6;  /* Text color */
+  text-align: center;
+ }
 
 
                                             
+
 
 
