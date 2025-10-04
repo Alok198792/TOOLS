@@ -11,11 +11,10 @@ html{
 body{
     background: #0b0d15;
     color: #a2a5b3;
-    min-height: 100vh;         /* Pure viewport ki height lega */
-    display: flex;
-   flex-direction: column;    /* Elements upar se niche stack honge */
-
+    display: block;
 }
+
+
 .cont{
     flex:1;
   height: 20px;
@@ -91,5 +90,6 @@ footer .panel p {
   color: #cacfe6;
   text-align: center;
 }
+
 
 
