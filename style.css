@@ -15,7 +15,7 @@ body{
   
 }
 .cont{
-  height: auto;
+  height: 20px;
   width: 100%;
   display:flex;
    flex-wrap: wrap;
@@ -91,3 +91,4 @@ footer .panel p {
   color: #cacfe6;  /* Text color */
   text-align: center;
 }
+
