@@ -9,12 +9,15 @@ html{
   color: #f0f0f0;
 }
 body{
-  height: 100vh;
-  background: #0b0d15;
-  color: #a2a5b3;
-  
+    background: #0b0d15;
+    color: #a2a5b3;
+    min-height: 100vh;         /* Pure viewport ki height lega */
+    display: flex;
+   flex-direction: column;    /* Elements upar se niche stack honge */
+
 }
 .cont{
+    flex:1;
   height: 20px;
   width: 100%;
   display:flex;
@@ -72,23 +75,21 @@ a{
   }
 }
 
-  footer {
+footer {
   width: 100%;
-  background-color: blueviolet;   /* Footer ka background */
-  padding: 15px 0;               /* Upar niche spacing */
+  background-color: blueviolet;
+  padding: 15px 0;
   display: flex;
-  justify-content: center;       /* Horizontal center */
-  align-items: center;           /* Vertical center */
-  position: fixed;               /* Fix footer */
-  bottom: 0;                     /* Always bottom */
-  left: 0;                       /* Left se start */
-  z-index: 1000;                 /* Sabse upar rahe */
+  justify-content: center;
+  align-items: center;
+  position: relative;   /* Fixed hata diya */
 }
 
 footer .panel p {
   margin: 0;
   font-size: 18px;
-  color: #cacfe6;  /* Text color */
+  color: #cacfe6;
   text-align: center;
 }
+
 
