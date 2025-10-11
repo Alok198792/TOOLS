@@ -1,123 +1,234 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tools</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Useful Tools & Links</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      font-family: "Poppins", sans-serif;
+      background: #0b0d15;
+      color: #e5e9f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 20px;
+      flex: 1;
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    /* ====== SEARCH BAR + FILTER ====== */
+    .search-filter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin: 15px 0 25px;
+      flex-wrap: wrap;
+    }
+
+    .search-filter input, .search-filter select {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .search-filter input::placeholder {
+      color: #a3acc2;
+    }
+
+    /* ====== CATEGORY SECTION ====== */
+    section.category {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 35px;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.5);
+    }
+
+    section.category h2 {
+      font-size: 20px;
+      color: #fff;
+      border-left: 4px solid #2b55d9;
+      padding-left: 10px;
+      margin-bottom: 18px;
+    }
+
+    /* ====== GRID OF CARDS ====== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 16px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    .card a {
+      display: block;
+      color: #a9c1ff;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: #b7c4db;
+    }
+
+    footer {
+      text-align: center;
+      color: #9aa3b2;
+      font-size: 13px;
+      padding: 15px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 22px; }
+      .container { padding: 20px 15px; }
+    }
+  </style>
 </head>
 <body>
-  <div class="cont">
-  <div class="card">
-     <a href="https://www.youtube.com/" target="_main">YOUTUBE</a>
-    
-  </div>
-  
-  <div class="card">
-     <a href="https://chatgpt.com/" target="_blank" >CHATGPT</a>
-    <p>When you click on CHATGPT,you directed to chatgpt.</p>
-  </div>
-  
-  <div class="card">
-     <a href="https://image.pi7.org" target="_blank">PI 7</a>
-  </div>
-  
-  <div class="card">
-     <a href=" https://copypastecharacter.com" target="_blank">Special characters</a>
-  </div>
-  
-  <div class="card">
-     <a href="https://onlineocr.net" target="_main">Image to Text converter(OCR)</a> 
-  </div>
-  
-  <div class="card">
-     <a href="https://polishmywriting.com/" target="_main">Check your writing for spelling or grammatical errors.</a>
+  <div class="container">
+    <h1>All Useful Tools & Links</h1>
+
+    <!-- 🔍 Search and Filter Controls -->
+    <div class="search-filter">
+      <input type="text" id="searchBox" placeholder="Search tools or links...">
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="study">Study & Tools</option>
+        <option value="pdf">PDF & File Tools</option>
+        <option value="coding">Coding & Design</option>
+        <option value="shopping">Shopping</option>
+        <option value="college">College / BEU</option>
+      </select>
     </div>
 
-<div class="card">
-     <a href="https://translate.google.com" target="_main">English to HindiTranlator</a> 
+    <!-- 🧠 Study & Tools -->
+    <section class="category" data-category="study">
+      <h2>🧠 Study & Tools</h2>
+      <div class="grid">
+        <div class="card"><a href="https://chatgpt.com/" target="_blank">ChatGPT</a><p>AI assistant for study and writing help.</p></div>
+        <div class="card"><a href="https://onlineocr.net" target="_blank">Image to Text (OCR)</a></div>
+        <div class="card"><a href="https://polishmywriting.com/" target="_blank">Grammar & Spell Checker</a></div>
+        <div class="card"><a href="https://translate.google.com" target="_blank">Google Translator</a></div>
+        <div class="card"><a href="https://eg4.nic.in//OPAC/Default.aspx?CL_NAME=GOVPOLY&LIB_CODE=GECVSL" target="_blank">National Digital Library</a></div>
+        <div class="card"><a href="2nd Semester syllabus.pdf" target="_blank">2nd Sem Syllabus (PDF)</a></div>
+      </div>
+    </section>
+
+    <!-- 🧰 PDF & File Tools -->
+    <section class="category" data-category="pdf">
+      <h2>🧰 PDF & File Tools</h2>
+      <div class="grid">
+        <div class="card"><a href="https://www.i2pdf.com/invert-pdf-colors" target="_blank">Invert PDF Colors</a></div>
+        <div class="card"><a href="https://bigpdf.11zon.com/en/images-to-pdf/combine-jpg-to-pdf.php" target="_blank">Images to PDF</a></div>
+        <div class="card"><a href="https://me-qr.com/qr-code-generator/qr" target="_blank">Convert to QR Code</a></div>
+        <div class="card"><a href="https://www.ilovepdf.com/organize-pdf" target="_blank">Organize PDF</a></div>
+        <div class="card"><a href="https://tools.pdf24.org/en/add-watermark" target="_blank">Add Watermark to PDF</a></div>
+      </div>
+    </section>
+
+    <!-- 💻 Coding & Design -->
+    <section class="category" data-category="coding">
+      <h2>💻 Coding & Design</h2>
+      <div class="grid">
+        <div class="card"><a href="https://github.com/" target="_blank">GitHub</a></div>
+        <div class="card"><a href="https://bennettfeely.com/clippy/" target="_blank">CSS Clip-path Maker</a></div>
+        <div class="card"><a href="https://image.pi7.org" target="_blank">PI7 Image Tool</a></div>
+        <div class="card"><a href="https://copypastecharacter.com" target="_blank">Special Character Picker</a></div>
+      </div>
+    </section>
+
+    <!-- 🛒 Shopping Links -->
+    <section class="category" data-category="shopping">
+      <h2>🛒 Shopping Links</h2>
+      <div class="grid">
+        <div class="card"><a href="https://www.amazon.in/" target="_blank">Amazon</a></div>
+        <div class="card"><a href="https://www.flipkart.com/" target="_blank">Flipkart</a></div>
+        <div class="card"><a href="https://www.meesho.com/" target="_blank">Meesho</a></div>
+        <div class="card"><a href="https://www.myntra.com/" target="_blank">Myntra</a></div>
+      </div>
+    </section>
+
+    <!-- 🏫 College -->
+    <section class="category" data-category="college">
+      <h2>🏫 College / BEU Section</h2>
+      <div class="grid">
+        <div class="card"><a href="https://beu-bih.ac.in/" target="_blank">BEU Bihar Official Site</a></div>
+        <div class="card"><a href="https://results.beup.ac.in/" target="_blank">BEU Result Portal</a></div>
+        <div class="card"><a href="https://www.youtube.com/" target="_blank">YouTube</a><p>Watch tutorials and lectures</p></div>
+      </div>
+    </section>
   </div>
 
-  <div class="card">
-     <a href="https://www.i2pdf.com/invert-pdf-colors" target="_main">Invert pdf color</a> 
-  </div>
-  
-  <div class="card">
-     <a href="https://bigpdf.11zon.com/en/images-to-pdf/combine-jpg-to-pdf.php" target="_main">Screenshot into pdf</a> 
-  </div>
-
-  <div class="card">
-     <a href="https://me-qr.com/qr-code-generator/qr" target="_main"> Convert any pdf,image,contacts etc into QR Code</a> 
-  </div>
-
-   
-  <div class="card">
-     <a href="2nd Semester syllabus.pdf " target="_main"> 2nd sem syllabus</a> 
-  </div>
-
-    <div class="card">
-     <a href="https://www.ilovepdf.com/organize-pdf" target="_main">Organise pdf</a> 
-  </div>
-
-
-   <div class="card">
-     <a href="https://github.com/" target="_main">GitHub </a> 
-  </div>
-
-    <div class="card">
-     <a href="https://beu-bih.ac.in/" target="_main">BEU Bihar</a> 
-  </div>
-
-   <div class="card">
-     <a href="https://results.beup.ac.in/" target="_main">BEU Result</a> 
-  </div>
-   
-   <div class="card">
-     <a href="https://eg4.nic.in//OPAC/Default.aspx?CL_NAME=GOVPOLY&LIB_CODE=GECVSL" target="_main">National Digital Library</a> 
-  </div>
-
-    <div class="card">
-     <a href="https://tools.pdf24.org/en/add-watermark" target="_main">Add watermark to pdf</a> 
-  </div>
-
-    <div class="card">
-     <a href="https://bennettfeely.com/clippy/" target="_main">CSS Clip-path maker</a> 
-  </div>
-
-   <div class="card">
-     <a href="https://www.flipkart.com/" target="_main">Flipkart</a> 
-  </div>
-
-   <div class="card">
-     <a href="https://www.amazon.in/" target="_main">Amazon</a> 
-  </div>
-
-      <div class="card">
-     <a href="https://www.meesho.com/" target="_main">Meesho</a> 
-  </div>
-
-      <div class="card">
-     <a href="https://www.myntra.com/" target="_main">Myntra</a> 
-  </div>
-   
   <footer>
-  <div class="panel">
-   <p>All rights reserved by Unknown &copy; 2025 &#124; Developed & maintained by Unknown.</p>
-  </div>
+    All rights reserved © 2025 | Developed by Unknown.
   </footer>
 
   <script>
-   let alllink=document.getElementsByTagName("a");
-   for(let i=0;i<alllink.length;i++){
-    allink[i].setAttribute("target","blank"); 
-   }
+    const searchBox = document.getElementById("searchBox");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const sections = document.querySelectorAll("section.category");
+
+    function filterContent() {
+      const query = searchBox.value.toLowerCase();
+      const selectedCategory = categoryFilter.value;
+
+      sections.forEach(section => {
+        const category = section.dataset.category;
+        const cards = section.querySelectorAll(".card");
+        let matchFound = false;
+
+        cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          const matchesSearch = text.includes(query);
+          const matchesCategory = selectedCategory === "all" || selectedCategory === category;
+          const shouldShow = matchesSearch && matchesCategory;
+          card.style.display = shouldShow ? "block" : "none";
+          if (shouldShow) matchFound = true;
+        });
+
+        // Hide entire section if no card visible
+        section.style.display = matchFound ? "block" : "none";
+      });
+    }
+
+    searchBox.addEventListener("input", filterContent);
+    categoryFilter.addEventListener("change", filterContent);
   </script>
-  </body>
+</body>
 </html>
-
-
-
-
-
-
-
