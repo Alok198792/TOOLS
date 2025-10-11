@@ -1,11 +1,16 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Useful Tools & Links</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     html, body {
       font-family: "Poppins", sans-serif;
       background: #0b0d15;
@@ -30,7 +35,7 @@
       font-size: 28px;
     }
 
-    /* ====== SEARCH BAR + FILTER ====== */
+    /* ===== SEARCH BAR + FILTER ===== */
     .search-filter {
       display: flex;
       justify-content: center;
@@ -40,39 +45,59 @@
       flex-wrap: wrap;
     }
 
-    .search-filter input, .search-filter select {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: #fff;
+    .search-filter input,
+    .search-filter select {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #e4d9e7;
       padding: 10px 14px;
       border-radius: 10px;
       font-size: 14px;
       outline: none;
+      transition: all 0.25s ease;
     }
 
     .search-filter input::placeholder {
-      color: #a3acc2;
+      color: #cfd2db;
     }
 
-    /* ====== CATEGORY SECTION ====== */
+    /* Dropdown Options fix */
+    .search-filter select option {
+      background: #0b0d15;
+      color: #e5e9f0;
+    }
+
+    /* Hover + Focus Glow */
+    .search-filter input:hover,
+    .search-filter select:hover {
+      border-color: #00ffe5;
+      box-shadow: 0 0 8px rgba(0,255,229,1);
+    }
+
+    .search-filter input:focus,
+    .search-filter select:focus {
+      border-color: #00ffe5;
+      box-shadow: 0 0 10px rgba(0,255,229,0.6);
+    }
+
+    /* ===== CATEGORY SECTIONS ===== */
     section.category {
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: 16px;
       padding: 22px;
       margin-bottom: 35px;
-      box-shadow: 0 6px 22px rgba(0,0,0,0.5);
     }
 
     section.category h2 {
       font-size: 20px;
-      color: #fff;
+      color: #0af3f3;
       border-left: 4px solid #2b55d9;
       padding-left: 10px;
       margin-bottom: 18px;
     }
 
-    /* ====== GRID OF CARDS ====== */
+    /* ===== GRID OF CARDS ===== */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -80,17 +105,20 @@
     }
 
     .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 12px;
-      padding: 16px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 0 18px rgba(0,255,229,0.25), 0 0 25px rgba(0,255,229,0.15); /* 🌟 More glow */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-align: center;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    }
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(0,255,229,0.6), 0 0 45px rgba(0,255,229,0.4); /* 💫 Stronger hover glow */
+}
+
 
     .card a {
       display: block;
@@ -108,15 +136,22 @@
 
     footer {
       text-align: center;
-      color: #9aa3b2;
-      font-size: 13px;
+      color: #fff;
+      font-size: 16px;
       padding: 15px 0;
-      border-top: 1px solid rgba(255,255,255,0.05);
+      border-top: 1px solid rgba(11, 214, 204, 0.05);
+      background: rgba(255,255,255,0.02);
     }
 
+    /* ===== RESPONSIVE DESIGN ===== */
     @media (max-width: 600px) {
       h1 { font-size: 22px; }
       .container { padding: 20px 15px; }
+      .search-filter { flex-direction: column; gap: 10px; }
+      .search-filter input, .search-filter select {
+        width: 100%;
+        max-width: 350px;
+      }
     }
   </style>
 </head>
@@ -124,7 +159,7 @@
   <div class="container">
     <h1>All Useful Tools & Links</h1>
 
-    <!-- 🔍 Search and Filter Controls -->
+    <!-- 🔍 Search and Filter -->
     <div class="search-filter">
       <input type="text" id="searchBox" placeholder="Search tools or links...">
       <select id="categoryFilter">
@@ -141,12 +176,12 @@
     <section class="category" data-category="study">
       <h2>🧠 Study & Tools</h2>
       <div class="grid">
-        <div class="card"><a href="https://chatgpt.com/" target="_blank">ChatGPT</a><p>AI assistant for study and writing help.</p></div>
-        <div class="card"><a href="https://onlineocr.net" target="_blank">Image to Text (OCR)</a></div>
-        <div class="card"><a href="https://polishmywriting.com/" target="_blank">Grammar & Spell Checker</a></div>
+        <div class="card"><a href="https://chatgpt.com/" target="_blank">ChatGPT</a></div>
         <div class="card"><a href="https://translate.google.com" target="_blank">Google Translator</a></div>
         <div class="card"><a href="https://eg4.nic.in//OPAC/Default.aspx?CL_NAME=GOVPOLY&LIB_CODE=GECVSL" target="_blank">National Digital Library</a></div>
+        <div class="card"><a href="https://onlineocr.net" target="_blank">Image to Text (OCR)</a></div>
         <div class="card"><a href="2nd Semester syllabus.pdf" target="_blank">2nd Sem Syllabus (PDF)</a></div>
+        <div class="card"><a href="https://polishmywriting.com/" target="_blank">Grammar & Spell Checker</a></div>
       </div>
     </section>
 
@@ -154,10 +189,10 @@
     <section class="category" data-category="pdf">
       <h2>🧰 PDF & File Tools</h2>
       <div class="grid">
+        <div class="card"><a href="https://www.ilovepdf.com/organize-pdf" target="_blank">Organize PDF</a></div>
         <div class="card"><a href="https://www.i2pdf.com/invert-pdf-colors" target="_blank">Invert PDF Colors</a></div>
         <div class="card"><a href="https://bigpdf.11zon.com/en/images-to-pdf/combine-jpg-to-pdf.php" target="_blank">Images to PDF</a></div>
         <div class="card"><a href="https://me-qr.com/qr-code-generator/qr" target="_blank">Convert to QR Code</a></div>
-        <div class="card"><a href="https://www.ilovepdf.com/organize-pdf" target="_blank">Organize PDF</a></div>
         <div class="card"><a href="https://tools.pdf24.org/en/add-watermark" target="_blank">Add Watermark to PDF</a></div>
       </div>
     </section>
@@ -167,18 +202,18 @@
       <h2>💻 Coding & Design</h2>
       <div class="grid">
         <div class="card"><a href="https://github.com/" target="_blank">GitHub</a></div>
-        <div class="card"><a href="https://bennettfeely.com/clippy/" target="_blank">CSS Clip-path Maker</a></div>
         <div class="card"><a href="https://image.pi7.org" target="_blank">PI7 Image Tool</a></div>
+        <div class="card"><a href="https://bennettfeely.com/clippy/" target="_blank">CSS Clip-path Maker</a></div>
         <div class="card"><a href="https://copypastecharacter.com" target="_blank">Special Character Picker</a></div>
       </div>
     </section>
 
-    <!-- 🛒 Shopping Links -->
+    <!-- 🛒 Shopping -->
     <section class="category" data-category="shopping">
       <h2>🛒 Shopping Links</h2>
       <div class="grid">
-        <div class="card"><a href="https://www.amazon.in/" target="_blank">Amazon</a></div>
         <div class="card"><a href="https://www.flipkart.com/" target="_blank">Flipkart</a></div>
+        <div class="card"><a href="https://www.amazon.in/" target="_blank">Amazon</a></div>
         <div class="card"><a href="https://www.meesho.com/" target="_blank">Meesho</a></div>
         <div class="card"><a href="https://www.myntra.com/" target="_blank">Myntra</a></div>
       </div>
@@ -189,8 +224,8 @@
       <h2>🏫 College / BEU Section</h2>
       <div class="grid">
         <div class="card"><a href="https://beu-bih.ac.in/" target="_blank">BEU Bihar Official Site</a></div>
-        <div class="card"><a href="https://results.beup.ac.in/" target="_blank">BEU Result Portal</a></div>
-        <div class="card"><a href="https://www.youtube.com/" target="_blank">YouTube</a><p>Watch tutorials and lectures</p></div>
+        <div class="card"><a href="https://results.beup.ac.in/" target="_blank">BEU Result </a></div>
+        <div class="card"><a href="https://www.youtube.com/" target="_blank">YouTube</a></div>
       </div>
     </section>
   </div>
@@ -222,7 +257,6 @@
           if (shouldShow) matchFound = true;
         });
 
-        // Hide entire section if no card visible
         section.style.display = matchFound ? "block" : "none";
       });
     }
