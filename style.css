@@ -1,9 +1,4 @@
- *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+ 
 html{
   font-family: Poppins;
   color: #f0f0f0;
@@ -90,6 +85,7 @@ footer .panel p {
   color: #cacfe6;
   text-align: center;
 }
+
 
 
 
