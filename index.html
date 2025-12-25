@@ -98,38 +98,38 @@ h1{
   gap:12px;
   margin:15px 0 25px;
   flex-wrap:wrap;
-  background:#000;          /* black background */
-  color:#fff;
-  border:1px solid #555;
+  /* remove background to blend with container */
 }
-  /* DROPDOWN OPTIONS */
+
+/* INPUT & SELECT */
+.search-filter input,
+.search-filter select{
+  background:#0b0d15;  /* same as body */
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.2);
+  padding:10px 14px;
+  border-radius:10px;
+  font-size:14px;
+}
+
+/* DROPDOWN OPTIONS */
 .search-filter select option{
-  background:#000;          /* black dropdown list */
+  background:#0b0d15;  /* dark dropdown */
   color:#fff;
 }
 
-/* Remove default arrow style (optional – better look) */
+/* Remove default arrow style */
 .search-filter select{
   appearance:none;
   -webkit-appearance:none;
   -moz-appearance:none;
 }
 
- /* Hover + Focus Glow */
-    .search-filter input:hover,
-    .search-filter select:hover {
-      border-color: #00ffe5;
-      box-shadow: 0 0 8px rgba(0,255,229,1);
-    }
-
-.search-filter input,
-.search-filter select{
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.2);
-  color:#fff;
-  padding:10px 14px;
-  border-radius:10px;
-  font-size:14px;
+/* Hover + Focus Glow */
+.search-filter input:hover,
+.search-filter select:hover {
+  border-color: #00ffe5;
+  box-shadow: 0 0 8px rgba(0,255,229,1);
 }
 
 /* CATEGORY */
@@ -163,12 +163,11 @@ section.category h2{
   text-align:center;
   box-shadow:0 0 18px rgba(0,255,229,.25);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-
- }
+}
 .card:hover{
   transform:translateY(-5px);
-   box-shadow: 0 0 30px rgba(0,255,229,0.6), 0 0 45px rgba(0,255,229,0.4); /* 💫 Stronger hover glow */}
-
+  box-shadow: 0 0 30px rgba(0,255,229,0.6), 0 0 45px rgba(0,255,229,0.4);
+}
 .card a{
   color:#a9c1ff;
   font-weight:600;
@@ -217,8 +216,8 @@ footer{
   <input type="text" id="searchBox" placeholder="Search tools...">
   <select id="categoryFilter">
     <option value="all">All Categories</option>
-    <option value="study">Stud & Toolsy</option>
-    <option value="pdf">PDF & Fu+ile Tools</option>
+    <option value="study">Stud & Tools</option>
+    <option value="pdf">PDF & File Tools</option>
     <option value="coding">Coding</option>
     <option value="shopping">Shopping</option>
     <option value="beu">College / BEU</option>
@@ -226,6 +225,7 @@ footer{
   </select>
 </div>
 
+<!-- ================= CATEGORY SECTIONS ================= -->
 <section class="category" data-category="study">
 <h2>🧠 Study & Tools</h2>
 <div class="grid">
@@ -263,7 +263,7 @@ footer{
 <section class="category" data-category="shopping">
 <h2>🛒 Shopping</h2>
 <div class="grid">
-    <div class="card"><a href="https://www.lenskart.com/vincent-chase-vc-e13628-c8-eyeglasses.html?rd=n&gad_source=1&gad_campaignid=22829333224&gclid=CjwKCAjw1ozEBhAdEiwAn9qbzaSgFBHyO74pBPXJmecZ_02sA_oIHNOkVVZoZ28BCiTmtXAjkWAJhxoCO2oQAvD_BwE" target="_blank">Lenskart 1</a></div>
+    <div class="card"><a href="https://www.lenskart.com/vincent-chase-vc-e13628-c8-eyeglasses.html" target="_blank">Lenskart 1</a></div>
     <div class="card"><a href="https://www.lenskart.com/lenskart-air-la-e16204-c2-eyeglasses.html?productId=211602" target="_blank">Lenskart 2</a></div>
     <div class="card"><a href="https://www.flipkart.com/" target="_blank">Flipkart</a></div>
     <div class="card"><a href="https://www.amazon.in/" target="_blank">Amazon</a></div>
@@ -272,34 +272,32 @@ footer{
  </div>
 </section>
 
-  <section class="category" data-category="beu">
+<section class="category" data-category="beu">
 <h2>🛒 Shopping</h2>
 <div class="grid">
     <div class="card"><a href="https://beu-bih.ac.in/" target="_blank">BEU Official Site</a></div>
     <div class="card"><a href="https://results.beup.ac.in/" target="_blank">BEU Result</a></div>
-    <div class="card"><a href="https://www.youtube.com/" target="_blank">TouTube</a></div>
+    <div class="card"><a href="https://www.youtube.com/" target="_blank">YouTube</a></div>
  </div>
 </section>
 
-      <section class="category" data-category="pyqs">
-      <h2>💻 PYQs</h2>
-      <div class="grid">
-        <div class="card"><a href="Discrete Mathematics.pdf" target="_blank">Discrete Mathematics </a></div>
-        <div class="card"><a href="Digital electronics.pdf" target="_blank">Digital Electronics </a></div>
-        <div class="card"><a href="Operating Systems.pdf" target="_blank">Operating Systems</a></div>
-        <div class="card"><a href="OOPs.pdf" target="_blank">OOPs</a></div>
-        <div class="card"><a href="DSA.pdf" target="_blank">DSA</a></div>
-      </div>
-    </section> <!-- last section -->
+<section class="category" data-category="pyqs">
+<h2>💻 PYQs</h2>
+<div class="grid">
+  <div class="card"><a href="Discrete Mathematics.pdf" target="_blank">Discrete Mathematics</a></div>
+  <div class="card"><a href="Digital electronics.pdf" target="_blank">Digital Electronics</a></div>
+  <div class="card"><a href="Operating Systems.pdf" target="_blank">Operating Systems</a></div>
+  <div class="card"><a href="OOPs.pdf" target="_blank">OOPs</a></div>
+  <div class="card"><a href="DSA.pdf" target="_blank">DSA</a></div>
+</div>
+</section>
 
-  </div> <!-- ✅ container closed properly -->
+</div> <!-- container closed -->
 
-  <footer>
-    All rights reserved © 2025 | Developed by Unknown.
-  </footer>
+<footer>
+  All rights reserved © 2025 | Developed by Unknown.
+</footer>
 
-
- 
 <script>
 /* ☰ MENU */
 function toggleMenu(){
@@ -334,6 +332,4 @@ categoryFilter.addEventListener("change",filterContent);
 
 </body>
 </html>
-
-
 
