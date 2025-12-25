@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -19,7 +19,28 @@
       display: flex;
       flex-direction: column;
     }
-
+/* nav */
+    .nav ul{
+        list-style-type:none;
+        background-color: #a47171;
+        padding: 0px;
+        margin: 0px;
+        overflow: hidden;
+    }
+    .nav a{
+        color: white;
+        text-decoration: none;
+        padding:15px;
+        display: block;
+        text-align: center;
+    }
+    .nav a:hover{
+        background-color: #a9c1ff;
+    }
+    .nav li{
+        float: right;
+    }
+    /* nav end */
     .container {
       width: 100%;
       max-width: 1200px;
@@ -135,14 +156,15 @@
     }
 
     footer {
-      text-align: center;
-      color: #fff;
-      font-size: 16px;
-      padding: 15px 0;
-      border-top: 1px solid rgba(11, 214, 204, 0.05);
-      background: rgba(12, 214, 137, 0.815);
-
-    }
+  width: 100%;
+  margin: 0;
+  padding: 15px 0;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  background: #333333;
+  border-radius: 0; /* corners sharp */
+}
 
     /* ===== RESPONSIVE DESIGN ===== */
     @media (max-width: 600px) {
@@ -157,6 +179,16 @@
   </style>
 </head>
 <body>
+    <!-- nav bar -->
+    <nav class="nav">
+    <ul>
+        <li><a href="">Dark mode </a></li>
+        <li><a href="expensetracker.html">Track expenses</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Home</a></li>
+    </ul>
+</nav>
+<!-- nav bar ends -->
   <div class="container">
     <h1>All Useful Tools & Links</h1>
 
@@ -170,6 +202,7 @@
         <option value="coding">Coding & Design</option>
         <option value="shopping">Shopping</option>
         <option value="college">College / BEU</option>
+        <option value="pyqs">PYQs</option>
       </select>
     </div>
 
@@ -234,7 +267,7 @@
     </section>
 
 
-     <section class="category" data-category="coding">
+     <section class="category" data-category="pyqs">
       <h2>💻 PYQs</h2>
       <div class="grid">
         <div class="card"><a href="Discrete Mathematics.pdf" target="_blank">Discrete Mathematics </a></div>
@@ -243,11 +276,14 @@
         <div class="card"><a href="OOPs.pdf" target="_blank">OOPs</a></div>
         <div class="card"><a href="DSA.pdf" target="_blank">DSA</a></div>
       </div>
-    </section>
+    </section> <!-- last section -->
+
+  </div> <!-- ✅ container closed properly -->
 
   <footer>
     All rights reserved © 2025 | Developed by Unknown.
   </footer>
+
 
   <script>
     const searchBox = document.getElementById("searchBox");
@@ -281,6 +317,7 @@
   </script>
 </body>
 </html>
+
 
 
 
