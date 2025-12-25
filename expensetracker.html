@@ -1,16 +1,18 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Expense Tracker</title>
 
 <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
+/* ===== THEME ===== */
 :root{
     --bg:#f4f6f8;
     --card:#ffffff;
@@ -24,236 +26,256 @@ body.dark{
     --table:#2a2a2a;
 }
 body{
-    margin:0;
     font-family:Arial, sans-serif;
     background:var(--bg);
     color:var(--text);
-  }
-.container{
-    max-width: 900px;
-    margin: auto;
-    padding: 15px;
-}
-h1{
-    text-align:center;
-    margin-bottom: 15px;
-    margin-top: 19px;
-    font-size: 28px;
-
 }
 
-/* nav */
-    .nav ul{
-        list-style-type:none;
-        background-color: #a47171;
-        padding: 0px;
-        margin: 0px;
-        overflow: hidden;
-    }
-    .nav a{
-        color: white;
-        text-decoration: none;
-        padding:11px;
-        display: block;
-        text-align: center;
-    }
-    .nav a:hover{
-        background-color: #a9c1ff;
-    }
-    .nav li{
-        float:right;
-    /* dark mode left side     */
-    .nav li.left{
-        float: left;
-    }
-    }
-    /* nav end */
-
-.container{
-    max-width:900px;
+/* ===== NAVBAR ===== */
+.nav{
+    background:#a47171;
+}
+.nav-inner{
+    max-width:1100px;
     margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between; /* ✅ left menu + right hamburger */
+    position:relative;
+}
+.nav ul{
+    list-style:none;
+    display:flex;
+}
+.nav a{
+    color:#fff;
+    text-decoration:none;
+    padding:14px 18px;
+    display:block;
+}
+.nav a:hover{
+    background:#8b5e5e;
 }
 
-/* 🌙 Dark mode icon */
+/* 🌙 Dark icon */
 .dark-toggle{
-    /* position:relative;
-    top:15px;
-    right:15px; */
     font-size:20px;
     cursor:pointer;
 }
 
-/* 📦 Sections */
+/* ☰ Hamburger */
+.menu-btn{
+    display:none;
+    font-size:26px;
+    color:#fff;
+    cursor:pointer;
+    padding:14px;
+}
+
+/* ===== MOBILE NAVBAR ===== */
+@media(max-width:768px){
+    .menu-btn{
+        display:block;              /* ✅ show hamburger */
+    }
+    .nav ul{
+        position:absolute;
+        top:56px;
+        left:0;
+        width:100%;
+        display:none;
+        flex-direction:column;
+        background:#a47171;
+    }
+    .nav ul.show{
+        display:flex;
+    }
+    .nav a{
+        text-align:left;
+    }
+}
+
+/* ===== LAYOUT ===== */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:15px;
+}
+h1{
+    text-align:center;
+    margin:20px 0;
+}
+
+/* ===== CARD ===== */
 .section{
     background:var(--card);
     padding:15px;
-    margin-bottom:50px;
+    margin-bottom:25px;
     border-radius:12px;
-    box-shadow:0 4px 12px rgb(5, 248, 232,1); /*✅ Box Shadow */
- 
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
 }
 
+/* ===== FORM ===== */
 input,select,button{
     width:100%;
-    padding:10px 0 10px ;
-    margin:6px 0;
-    border-radius: 5px;
-    box-shadow:0 4px 12px rgba(7, 217, 224, 0.3); /* ✅ Box Shadow */
-
- }
-
+    padding:10px;
+    margin-top:10px;
+    font-size:16px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
 button{
     background:#4CAF50;
     color:#fff;
     border:none;
     cursor:pointer;
- }
-
+}
 .pdf-btn{
     background:#9C27B0;
 }
 
+/* ===== TABLE ===== */
+.table-wrapper{
+    width:100%;
+    overflow-x:auto;
+}
 table{
     width:100%;
     border-collapse:collapse;
 }
-
 th,td{
     border:1px solid #ccc;
     padding:8px;
     text-align:center;
     background:var(--table);
 }
-
 .delete-btn{
     background:red;
     color:#fff;
     border:none;
-    padding:7px;
+    padding:6px 10px;
 }
-
 .total{
     text-align:right;
     font-weight:bold;
     margin-top:10px;
 }
- footer {
-  width: 100%;
-  margin: 0;
-  padding: 15px 0;
-  text-align: center;
-  color: #fff;
-  font-size: 16px;
-  background: #333333;
-  border-radius: 0; /* corners sharp */
-}
 
-/* 📱 Mobile */
-@media(max-width:600px){
-    table{font-size:12px;}
+/* ===== FOOTER ===== */
+footer{
+    background:#333;
+    color:#fff;
+    text-align:center;
+    padding:15px;
 }
 </style>
 </head>
 
 <body>
- <!-- nav bar -->
-    <nav class="nav">
-    <ul>
-        <li class="left">
-      <a href="javascript:void(0)" onclick="toggleDarkMode()">
-        <span class="dark-toggle">🌙</span>
-      </a>
-    </li>
-        <li><a href="">Dark mode </a></li>
-        <li><a href="expensetracker.html">Track expenses</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="index.html">Home</a></li>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+
+    <!-- LEFT SIDE MENU -->
+    <ul id="navMenu">
+      <li>
+        <a href="javascript:void(0)" onclick="toggleDarkMode()">
+          <span class="dark-toggle">🌙</span>
+        </a>
+      </li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="expensetracker.html">Track Expenses</a></li>
+      <li><a href="#">About</a></li>
     </ul>
+
+    <!-- RIGHT SIDE ☰ -->
+    <span class="menu-btn" onclick="toggleMenu()">☰</span>
+
+  </div>
 </nav>
-<!-- nav bar ends -->
- 
+
 <h1>Expense Tracker</h1>
 
 <div class="container">
 
-<!-- ➕ ADD EXPENSE -->
+<!-- ADD EXPENSE -->
 <div class="section">
 <h3>Add Expense</h3>
 
 <input type="text" id="description" placeholder="Description">
 <input type="number" id="amount" placeholder="Amount (₹)">
-
 <select id="category">
-<option value="">Select Category</option>
-<option>Room Rent</option>
-<option>Mess</option>
-<option>Food</option>
-<option>Transport</option>
-<option>Shopping</option>
-<option>Practical Copy</option>
-<option>Other</option>
+    <option value="">Select Category</option>
+    <option>Room Rent</option>
+    <option>Mess</option>
+    <option>Food</option>
+    <option>Transport</option>
+    <option>Shopping</option>
+    <option>Other</option>
 </select>
-
 <input type="date" id="date">
-<button onclick="addExpense()">Add Expense</button>
 
-<button class="pdf-btn" onclick="exportToPDF()">📄 Export to PDF</button>
+<button onclick="addExpense()">Add Expense</button>
+<button class="pdf-btn" onclick="exportToPDF()">📄 Export PDF</button>
 </div>
 
-<!-- 📋 EXPENSE TABLE -->
+<!-- EXPENSE LIST -->
 <div class="section">
-<h3>Expenses (Month Wise)</h3>
+<h3>Expenses</h3>
 
 <select id="monthFilter" onchange="renderExpenses()">
 <option value="">All Months</option>
 </select>
 
+<div class="table-wrapper">
 <table>
-   <thead>
-    <tr>
-     <th>Category</th>
-     <th>Date</th>
-     <th>Description</th>
-     <th>Amount(₹)</th>
-     <th>Action</th>
-   </tr>
+<thead>
+<tr>
+<th>Category</th>
+<th>Date</th>
+<th>Description</th>
+<th>Amount</th>
+<th>Action</th>
+</tr>
 </thead>
 <tbody id="expenseList"></tbody>
 </table>
-
-<div class="total">
-Month Total: ₹<span id="monthTotal">0</span>
-</div>
 </div>
 
-<!-- 📊 CATEGORY TOTAL -->
+<div class="total">Month Total ₹ <span id="monthTotal">0</span></div>
+</div>
+
+<!-- CATEGORY TOTAL -->
 <div class="section">
-<h3>Category-wise Total (All Months)</h3>
+<h3>Category-wise Total</h3>
 
+<div class="table-wrapper">
 <table>
-  <thead>
-    <tr>
-     <th>Category</th>
-     <th>Total Amount</th>
-   </tr>
+<thead>
+<tr><th>Category</th><th>Total</th></tr>
 </thead>
 <tbody id="categoryTotals"></tbody>
 </table>
-
-<div class="total">
-Grand Total: ₹<span id="grandTotal">0</span>
 </div>
-</div> 
-  </div> <!-- ✅ container closed properly -->
 
-  <footer>
-    All rights reserved © 2025 | Developed by Unknown.
-  </footer>
+<div class="total">Grand Total ₹ <span id="grandTotal">0</span></div>
+</div>
+
+</div>
+
+<footer>
+© 2025 Expense Tracker
+</footer>
 
 <script>
 let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
 
-/* 🌙 Dark Mode */
+/* ☰ Toggle menu */
+function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("show");
+}
+
+/* 🌙 Dark mode */
 function toggleDarkMode(){
     document.body.classList.toggle("dark");
     localStorage.setItem("darkMode",document.body.classList.contains("dark"));
@@ -265,33 +287,24 @@ if(localStorage.getItem("darkMode")==="true"){
     document.querySelector(".dark-toggle").innerText="☀️";
 }
 
-/* 📅 Date format dd-mm-yyyy */
-function formatDate(dateStr){
-    const [y,m,d] = dateStr.split("-");
-    return `${d}-${m}-${y}`;
-}
-
-/* ➕ Add Expense */
+/* Add expense */
 function addExpense(){
     if(!description.value || !amount.value || !category.value || !date.value){
-        alert("Fill all fields");
-        return;
+        alert("Fill all fields"); return;
     }
-
     expenses.push({
         description:description.value,
         amount:amount.value,
         category:category.value,
         date:date.value
     });
-
     localStorage.setItem("expenses",JSON.stringify(expenses));
     updateMonthFilter();
     renderExpenses();
     document.querySelectorAll("input,select").forEach(e=>e.value="");
 }
 
-/* ❌ Delete */
+/* Delete */
 function deleteExpense(i){
     expenses.splice(i,1);
     localStorage.setItem("expenses",JSON.stringify(expenses));
@@ -299,45 +312,29 @@ function deleteExpense(i){
     renderExpenses();
 }
 
-/* 📅 Month filter */
+/* Month filter */
 function updateMonthFilter(){
-    const monthNames = [
-        "January","February","March","April","May","June",
-        "July","August","September","October","November","December"
-    ];
-
-    const months = [...new Set(expenses.map(e => e.date.slice(0,7)))];
-
-    monthFilter.innerHTML = `<option value="">All Months</option>`;
-
-    months.forEach(m => {
-        const [year, monthNum] = m.split("-");
-        const monthName = monthNames[Number(monthNum) - 1];
-
-        monthFilter.innerHTML +=
-            `<option value="${m}">${monthNum} - ${monthName} - ${year}</option>`;
+    monthFilter.innerHTML='<option value="">All Months</option>';
+    [...new Set(expenses.map(e=>e.date.slice(0,7)))].forEach(m=>{
+        monthFilter.innerHTML+=`<option value="${m}">${m}</option>`;
     });
 }
-
 
 /* 🔄 Render logic for table in month wise */
 function renderExpenses(){
     expenseList.innerHTML="";
     categoryTotals.innerHTML="";
-
-    let monthSum=0, grandSum=0;
-    let catSum={};
-    const selectedMonth=monthFilter.value;
+    let m=0,g=0,c={};
+    const sm=monthFilter.value;
 
     expenses.forEach((e,i)=>{
-        grandSum+=Number(e.amount);
-        catSum[e.category]=(catSum[e.category]||0)+Number(e.amount);
-
-        if(selectedMonth && !e.date.startsWith(selectedMonth)) return;
+        g+=+e.amount;
+        c[e.category]=(c[e.category]||0)+ +e.amount;
+        if(sm && !e.date.startsWith(sm)) return;
 
         const r=expenseList.insertRow();
         r.insertCell(0).innerText=e.category;
-        r.insertCell(1).innerText=formatDate(e.date); /* ✅ formatted */
+        r.insertCell(1).innerText=e.date;
         r.insertCell(2).innerText=e.description;
         r.insertCell(3).innerText=e.amount;
 
@@ -347,16 +344,15 @@ function renderExpenses(){
         b.onclick=()=>deleteExpense(i);
         r.insertCell(4).appendChild(b);
 
-        monthSum+=Number(e.amount);
+        m+=+e.amount;
     });
 
-    monthTotal.innerText=monthSum;
-    grandTotal.innerText=grandSum;
-
-    for(let c in catSum){
+    monthTotal.innerText=m;
+    grandTotal.innerText=g;
+    for(let k in c){
         const r=categoryTotals.insertRow();
-        r.insertCell(0).innerText=c;
-        r.insertCell(1).innerText="₹"+catSum[c];
+        r.insertCell(0).innerText=k;
+        r.insertCell(1).innerText="₹ "+c[k];
     }
 }
 
@@ -365,19 +361,10 @@ function exportToPDF(){
     window.print();
 }
 
-const description=document.getElementById("description");
-const amount=document.getElementById("amount");
-const category=document.getElementById("category");
-const date=document.getElementById("date");
-const monthFilter=document.getElementById("monthFilter");
-const monthTotal=document.getElementById("monthTotal");
-const grandTotal=document.getElementById("grandTotal");
-const expenseList=document.getElementById("expenseList");
-const categoryTotals=document.getElementById("categoryTotals");
-
 updateMonthFilter();
 renderExpenses();
 </script>
 
 </body>
 </html>
+
