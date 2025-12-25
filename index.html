@@ -98,6 +98,21 @@ h1{
   gap:12px;
   margin:15px 0 25px;
   flex-wrap:wrap;
+  background:#000;          /* black background */
+  color:#fff;
+  border:1px solid #555;
+}
+  /* DROPDOWN OPTIONS */
+.search-filter select option{
+  background:#000;          /* black dropdown list */
+  color:#fff;
+}
+
+/* Remove default arrow style (optional – better look) */
+.search-filter select{
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
 }
 
  /* Hover + Focus Glow */
@@ -319,5 +334,6 @@ categoryFilter.addEventListener("change",filterContent);
 
 </body>
 </html>
+
 
 
